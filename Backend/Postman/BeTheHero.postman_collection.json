@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "d6352448-8e5e-40a7-8637-f4c83e4202d9",
+		"name": "BeTheHero",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ONGS",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"APED\",\n\t\"email\":\"contacto2@example.com\",\n\t\"whatsapp\":\"00351999999991\",\n\t\"city\":\"Porto\",\n\t\"cf\":\"PT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/ongs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"ongs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/ongs",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"ongs"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Incidents",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "661561ed",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Tratament\",\n\t\"description\": \"Gato necessita de ser tratado\",\n\t\"value\": 500.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/incidents",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/incidents",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "661561ed",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/incidents/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"incidents",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "661561ed"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"661561ed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/sessions",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "83340cff-9570-4a74-bc64-a20d5833c1d9",
+			"key": "URL",
+			"value": "http://localhost:8085",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
