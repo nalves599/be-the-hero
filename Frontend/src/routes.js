@@ -1,6 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
+import Error from './pages/Error';
+
 import Logon from './pages/Logon';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
@@ -15,7 +17,10 @@ export default function Routes() {
                 <Route path="/profile" component={Profile}/>
                 <Route path="/incidents/new" component={NewIncident}/>
 
+                <Route path="/500" exact component={Error}/> {/* Page 500 */}
                 <Route path="/"  component={Logon}/> {/* Page 404 */}
+                
+
             </Switch>
         </BrowserRouter>
     );

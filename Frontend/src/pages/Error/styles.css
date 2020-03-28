@@ -1,0 +1,34 @@
+.error-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-container img {
+    animation: blink 3s infinite alternate;
+}
+
+.error-container img ~ *{
+    margin-top: 20px
+}
+
+.error-container p {
+    line-height: 18px;
+    max-width: 420px;
+    text-align: center;
+}
+
+@keyframes blink{
+    0% {
+        filter: brightness(100%)
+    }
+    100% {
+        filter: brightness(70%);
+    }
+}

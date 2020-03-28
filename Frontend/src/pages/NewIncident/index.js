@@ -24,13 +24,18 @@ export default function NewIncident() {
             value
         };
 
-        await api.post('/incidents', data, {
-            headers: {
-                Authorization: ongId
-            }
-        });
+        try {
+            await api.post('/incidents', data, {
+                headers: {
+                    Authorization: ongId
+                }
+            });
 
-        history.push('/profile');
+            history.push('/profile');
+        } catch (err) {
+            alert('Erro ao registar caso, tenete mais tarde');
+        }
+
     }
 
     return (
