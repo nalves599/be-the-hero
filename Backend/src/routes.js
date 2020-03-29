@@ -9,7 +9,7 @@ const SessionsController = require('./controllers/SessionsController');
 const routes = express.Router();
 
 // Check Backend Status
-routes.get('/check', (req,res) => (res.send()))
+routes.get('/check', (req,res) => (res.send()));
 
 routes.post('/sessions', SessionsController.store);
 
